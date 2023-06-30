@@ -1,0 +1,14 @@
+body {
+  background: rgb(113, 183, 144);
+  background: linear-gradient(90deg, rgb(113, 183, 144) 0%, rgb(141, 185, 202) 35%, rgb(175, 150, 212) 100%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.pannel {
+  border: 1px solid white;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

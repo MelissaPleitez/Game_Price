@@ -1,0 +1,15 @@
+
+body{
+    background: rgb(113,183,144);
+background: linear-gradient(90deg, rgba(113,183,144,1) 0%, rgba(141,185,202,1) 35%, rgba(175,150,212,1) 100%);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+.pannel{
+    border: 1px solid white;
+    text-align: center;
+}
+
