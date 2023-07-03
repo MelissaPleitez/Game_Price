@@ -1,15 +1,132 @@
+$text-primary: white;
+$btn-bg: rgb(235, 120, 78);
+$font-primary:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$font-secundary: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 body{
     background: rgb(113,183,144);
 background: linear-gradient(90deg, rgba(113,183,144,1) 0%, rgba(141,185,202,1) 35%, rgba(175,150,212,1) 100%);
 }
 
+button{
+    padding: 10px;
+    width: 50%;
+    background-color: #eeaeca;
+    color: $text-primary;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+}
+
+input, select{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(246, 246, 246);
+    border: none;
+    border-radius: 5px;
+}
+label, p{
+    font-family: $bg-primary;
+    font-weight: bold;
+    font-family: $font-secundary;
+}
+
+
+
 .container{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 .pannel{
     border: 1px solid white;
     text-align: center;
+    padding: 50px;
+    background-color: #FFF;
+    font-family: $text-secondary;
+    border-radius: 10px;
 }
 
+
+.error{
+    background-color: #FBE9E7;
+    border: 1px solid #F4511E;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #F4511E;
+}
+
+.good{
+    background-color: rgb(211, 249, 187);
+    border: 1px solid rgb(50, 167, 0);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(4, 150, 50);
+ 
+}
+
+.title{
+    text-align: center;
+    font-family: $font-primary;
+    background-color: #eeaeca;
+    padding: 10px;
+    border-radius: 5px;
+    color: $text-primary
+}
+
+.info_bold{
+    font-weight: bolder;
+}
+
+.info_normal{
+    font-weight: lighter;
+}
+
+#result{
+    margin-bottom: 40px;
+}
+
+#result div{
+
+    border: 1px solid #eeaeca;
+    padding: 0  0 20px 0;
+    text-align: center;
+}
+
+#result div p{
+    margin-bottom: 0;
+}
+
+#result div p.header{
+    border: none;
+    border-radius: 5px;
+    background-color: #eeaeca;
+    color: $text-primary;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+// Spinner
+
+.loader {
+    display: none;
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #eeaeca; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

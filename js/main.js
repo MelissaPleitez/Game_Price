@@ -6,6 +6,30 @@ this.year=year
 this.type=type
 }
 
+Brands.prototype.prices= function(){
+
+let price;
+const base = 100
+switch(this.brands){
+    case '1':
+    price= base* 1.35
+    break
+    case '2':
+        price= base* 1.15
+    break
+    case '3':
+        price= base* 1.05
+    break
+
+    default:
+
+    break
+}
+
+return price
+
+}
+
 
 function UI (){}
 
@@ -27,9 +51,9 @@ for(let i= max; i>min; i--){
 
 }
 
-UI.prototype.adding_html=function(brand, year, type){
+UI.prototype.adding_html=function(total, brand){
 let brand_info
-    switch(brand){
+    switch(brand.brands){
         case '1':
             brand_info= 'Nintendo'
             break
@@ -46,31 +70,40 @@ const container = document.querySelector('#result')
 const div = document.createElement('div')
 
 div.innerHTML= ` 
-<h4>${brand_info}</h4>
-<h4>${year}</h4>
-<h4>${type}</h4>
+<p class="header">RESULTS:</p>
+<h4 class="info_bold">Brand:  <span class="info_normal">${brand_info}</span></h4>
+<h4 class="info_bold">Year:  <span class="info_normal">${brand.year}</span></h4>
+<h4 class="info_bold">Type:  <span class="info_normal">${brand.type}</span></h4>
+<h4 class="info_bold">Price: <span class="info_normal">$${total}</span></h4>
 ` 
 
-container.appendChild(div)
-console.log(brand, year, type)
+const spinner= document.querySelector('.loader')
+spinner.style.display='block'
+
+setTimeout(() => {
+    spinner.style.display='none'
+    container.appendChild(div)
+}, 3000);
+
+
 
 }
 
 UI.prototype.alerts= function (message, type_m){
-    const dev= document.createElement('p')
+    const dev= document.createElement('div')
 
     if(type_m ==='error'){
        
-        dev.innerHTML= message
-        form.insertBefore(dev, document.querySelector('#result'))
-        console.log(message, type_m)
-        return
+     dev.classList.add('error')
+    }else{
+        dev.classList.add('good')
     }
    
-    dev.innerHTML= message
+    dev.textContent= message
+    form.insertBefore(dev, document.querySelector('#result'))
     setTimeout(() => {
         dev.remove()
-        form.insertBefore(dev, document.querySelector('#result'))
+        
     }, 3000);
     
     }
@@ -92,14 +125,21 @@ const year_type= document.querySelector('#year').value
 const types = document.querySelector('input[name="type"]:checked').value
 
 if(brans_type === '' || year_type=== '' || types===''){
-  ui.alerts('empty', 'error')
+  ui.alerts('One of the inputs is empty', 'error')
     return 
 }
 
+ui.alerts('Getting info..', 'good')
+const result = document.querySelector('#result div')
 
+if(result != null){
+    result.remove()
+}
 
-// console.log('inputs:', brans_type, year_type, types)
-ui.adding_html(brans_type, year_type, types)
+const brands= new Brands(brans_type, year_type, types)
+const total= brands.prices();
+
+ui.adding_html(total, brands)
 
 }
 

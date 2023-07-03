@@ -11,32 +11,39 @@
 </head>
 
 <body>
-
+ 
     <div class="container">
-     
         <div class="pannel">
+            <h2 class="title">Video Game's Price </h2>
             <form id="form">
-                <label>Games Brands</label>
+                <label>GAMES BRANDS</label>
                 <select name="brands" id="brands">
                     <option value="">- Select -</option>
                     <option value="1">Nintendo</option>
                     <option value="2">Sony</option>
                     <option value="3">Electronic Arts</option>
                  </select>
-                 <label>Year</label>
+                 <label>YEAR</label>
                  <select name="year" id="year">
                  </select>
-                 <h3>Type of Games</h3>
-                 <label>New</label>
-                 <input type="radio" id="html" name="type" value="new">
-                 <label>Trend</label>
-                 <input type="radio" id="html" name="type" value="trend">
-                 <label>Low</label>
-                 <input type="radio" id="html" name="type" value="low">
+                 <h3 class="title">TYPE OF VIDEOGAMES</h3>
+                 <label>NEW</label>
+                 <input type="radio" id="html" name="type" value="New">
+                 <label>TREND</label>
+                 <input type="radio" id="html" name="type" value="Trend">
+                 <label>LOW</label>
+                 <input type="radio" id="html" name="type" value="Low">
+                 <!-- <div class="spinner">
+                    <span class="loader"></span>
+                 </div> -->
+                 
                  <div id="result">
-               
+                    
                  </div>
-
+                
+                    <div class="loader"></div>
+                
+                 
                  <button type="submit">Check Prices</button>
             </form>
         </div>
@@ -44,7 +51,7 @@
     </div>
 
     <h4></h4>
-    
+    <span></span>
     <script src="js/main.js"></script>
   
 
